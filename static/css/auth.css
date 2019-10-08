@@ -1,0 +1,100 @@
+.register {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-around;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.register > div:first-child {
+  flex-basis: 30%;
+  padding: 30px 50px;
+}
+
+.parallax img {
+  width: 100%;
+  height: 100vh;
+  -webkit-animation: parallax 60s infinite; /* Safari 4.0 - 8.0 */
+  animation: parallax 60s infinite;
+}
+
+.register > div:last-child {
+  flex-basis: 70%;
+  overflow: hidden;
+}
+
+.register .form h1 {
+  font-size: 30px;
+  text-transform: capitalize;
+  margin-bottom: 15px;
+  color: #333;
+}
+
+.register .form p {
+  font-size: 16px;
+  color: #a19f9f;
+}
+
+.form-group label {
+  width: 100%;
+  display: inline-block;
+  text-transform: capitalize;
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 10px;
+  border-radius: 3px;
+  border: 0;
+  box-shadow: 0 3px 5px 3px rgba(0, 0, 0, 0.1);
+}
+
+.form-group input:focus,
+.form-group input:hover {
+  box-shadow: 0 3px 5px 3px rgba(0, 0, 0, 0.17);
+}
+
+.form-group {
+  margin-bottom: 25px;
+}
+
+form {
+  margin-top: 40px;
+}
+
+.form-group.btn-group {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.form-group.btn-group button {
+  background: #e91e63;
+  border: 0;
+  padding: 9px 30px;
+  border-radius: 3px;
+  color: #fff;
+  text-transform: uppercase;
+  box-shadow: 0 3px 5px 3px rgba(0, 0, 0, 0.17);
+}
+
+@keyframes parallax {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+}
+
+.link {
+  text-align: center;
+  width: 100%;
+  display: inline-block;
+}
+
+.link span {
+  font-weight: bold;
+}

@@ -1,0 +1,26 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+a,
+button {
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: block;
+}
+
+.page-content {
+  padding-top: 25px;
+}
+
+.error {
+  color: red !important;
+}

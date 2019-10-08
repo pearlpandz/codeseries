@@ -1,0 +1,54 @@
+{% extends 'base.html'%}
+{% load static %}
+{% load fontawesome %}
+
+{% block content %}
+
+<div class="register">
+    <div class="form">
+        <h1>code <span>series...</span></h1>
+        <p>Want to become a coder?</p>
+
+        <form action="auth/register" method="POST">
+            {% csrf_token %}
+            <div class="form-group">
+                <label for="name">Name</label>
+                <input type="text" placeholder="Enter your name" id="name" name="name">
+            </div>
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" placeholder="Enter your email" id="email" name="email">
+            </div>
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" placeholder="Enter your password" id="password" name="password">
+            </div>
+            <div class="form-group">
+                <label for="mobile">Mobile</label>
+                <input type="number" placeholder="Enter your mobile number" id="mobile" name="mobile">
+            </div>
+            
+            {% for msg in messages %}
+            <div class="form-group">
+                <p class="error">{{msg}}</p>
+            </div>
+            {% endfor %}
+
+            <div class="form-group btn-group">
+                <button type="submit">register</button>
+            </div>
+            <div class="form-group">
+                <a class="link" href="/">Already have an account {% fontawesome_icon 'smile-o' %}
+                    <span>Login</span></a>
+            </div>
+        </form>
+
+    </div>
+
+    <div class="parallax">
+        <img src="{% static 'images/register.jpg' %}" alt="">
+    </div>
+
+</div>
+
+{% endblock %}

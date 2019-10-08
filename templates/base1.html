@@ -1,0 +1,47 @@
+{% load static %}
+{% load fontawesome %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Code Series...</title>
+    {% fontawesome_stylesheet %}
+    <link rel="stylesheet" href="{% static 'css/common.css' %}">
+    <link rel="stylesheet" href="{% static 'css/header.css' %}">
+    <link rel="stylesheet" href="{% static 'css/home.css' %}">
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <a href="/">Code <span>Series...</span></a>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="home">Home</a></li>
+                    <li><a href="/">events</a></li>
+                    <li><a href="/" target="_blank">playground</a></li>
+                    <li><a href="/">blog</a></li>
+
+                    {% if user.is_authenticated %}
+                        <li><a>{{user.username}}</a></li>
+                        <li><a href="auth/logout">logout</a></li>
+                    {% else %}
+                        <li><a href="auth/register">register</a></li>
+                        <li><a href="auth/login">login</a></li>
+                    {% endif %}
+
+                </ul>
+            </nav>
+        </div>
+    </header>
+    {% block content %}
+    {% endblock %}
+</body>
+
+</html>

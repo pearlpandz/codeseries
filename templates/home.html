@@ -1,0 +1,35 @@
+{% extends 'base1.html'%}
+
+{% load static %}
+
+
+
+{% load fontawesome %}
+
+
+{% block content %}
+
+<div class="page-content">
+    <div class="container">
+        <div class="courses">
+            {% for course in courses %}
+            <div>
+                <div class="img"><img src="{{course.img}}" alt=""></div>
+
+                <div class="course-details">
+                    <h4>{{course.name}}</h4>
+                    <p>{{course.description}}</p>
+                    <h6>Lesson Count: {{course.lessons}}</h6>
+                </div>
+
+                {% if course.offer %}
+                <a class="offer">{{course.offerAmount}}% Offer</a>
+                {% endif %}
+
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+
+{% endblock %}

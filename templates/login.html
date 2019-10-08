@@ -1,0 +1,46 @@
+{% extends 'base.html'%}
+{% load static %}
+{% load fontawesome %}
+
+{% block content %}
+
+<div class="register">
+    <div class="form">
+        <h1>code <span>series...</span></h1>
+        <p>Welcome Back!</p>
+
+        <form action="/auth/login" method="POST">
+            {% csrf_token %}
+            <div class="form-group">
+                <label for="username">Username</label>
+                <input type="text" placeholder="Enter your username" id="username" name="username">
+            </div>
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" placeholder="Enter your password" id="password" name="password">
+            </div>
+
+            {% for msg in messages %}
+            <div class="form-group">
+                <p class="error">{{msg}}</p>
+            </div>
+            {% endfor %}
+
+            <div class="form-group btn-group">
+                <button type="submit">login</button>
+            </div>
+            <div class="form-group">
+                <a class="link" href="register">want to become a coder? {% fontawesome_icon 'hand-o-right' %}
+                    <span>Register</span></a>
+            </div>
+        </form>
+
+    </div>
+
+    <div class="parallax">
+        <img src="{% static 'images/register.jpg' %}" alt="">
+    </div>
+
+</div>
+
+{% endblock %}
